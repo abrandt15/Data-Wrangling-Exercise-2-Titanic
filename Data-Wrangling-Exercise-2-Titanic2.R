@@ -9,7 +9,7 @@ View (titanic)
 
 titanic %>% mutate(embarked = gsub("^$|^ $", "S", embarked))
 titanic %>% mutate(embarked = gsub("NA", "S", embarked))
-View(titanic)
+
 
 # Task 2: Age - Populate missing values with mean of age column.
 unique(titanic$age)
@@ -20,5 +20,17 @@ print(mean_age)
 
 # replacing NA values with mean age
 mean_age <- titanic$age[is.na(titanic$age)]
-print(mean_age)
+print
+
+# Lifeboat
+
+titanic$boat <- sub("^$", "NA", titanic$boat)
+titanic$boat <- as.factor(titanic$boat)
+
+
+## Cabin
+
+titanic$has_cabin_number <- titanic %>% mutate(has_cabin_number = ifelse(titanic$cabin != 'Null',1,0))
+
+
 
