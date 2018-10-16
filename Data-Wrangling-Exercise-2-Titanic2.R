@@ -20,7 +20,7 @@ print(mean_age)
 
 # replacing NA values with mean age
 mean_age <- titanic$age[is.na(titanic$age)]
-print
+print (mean_age)
 
 # Lifeboat
 
@@ -31,6 +31,5 @@ titanic$boat <- as.factor(titanic$boat)
 ## Cabin
 
 titanic$has_cabin_number <- titanic %>% mutate(has_cabin_number = ifelse(titanic$cabin != 'Null',1,0))
-
 
 
